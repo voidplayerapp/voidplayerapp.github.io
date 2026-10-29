@@ -537,7 +537,7 @@ h1 {
 
 /* Next to the title: the TV source picker. The status line shimmers while your sources are searched (base
    45 %, a soft band of full white, 1.6 s travel and 0.5 s rest, as in the app), six highlights pop in one by one as results,
-   the status turns to "all searched", and after a while the scene starts again (16 s).
+   the status turns to "all searched", and after a while the scene starts again (18 s; a new row every 1.1 s, so each can be read).
    It pauses under the pointer; with reduced motion it shows the finished results. */
 .picker {
   padding: 30px 28px 26px;
@@ -689,48 +689,90 @@ h1 {
   background: rgba(23, 32, 51, 0.1);
 }
 
+/* Picker rows jump to their section (User 29.10.): the pill follows the pointer or the keyboard focus, like the
+   focus on the TV; the first row keeps it while nothing else is pointed at. */
+a.pick-row {
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 180ms var(--ease), color 180ms var(--ease);
+}
+
+a.pick-row:focus-visible {
+  outline: none;
+}
+
+.pick-rows:hover .pick-row:not(:hover),
+.pick-rows:focus-within .pick-row:not(:focus-visible) {
+  background: rgba(39, 39, 39, 0.92);
+  color: var(--text);
+}
+
+.pick-rows:hover .pick-row:not(:hover) .pick-source,
+.pick-rows:focus-within .pick-row:not(:focus-visible) .pick-source {
+  color: var(--text-2);
+}
+
+.pick-rows .pick-row:hover,
+.pick-rows .pick-row:focus-visible {
+  background: var(--pill);
+  color: var(--pill-text);
+}
+
+.pick-rows .pick-row:hover .pick-source,
+.pick-rows .pick-row:focus-visible .pick-source {
+  color: rgba(23, 32, 51, 0.68);
+}
+
+/* A row reached with the keyboard is always visible, whatever the loop shows. */
+.pick-row:focus-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .shimmer {
     animation: pick-shimmer 2.1s linear infinite;
   }
 
   .is-searching {
-    animation: pick-searching 16s var(--ease) infinite;
+    animation: pick-searching 18s var(--ease) infinite;
   }
 
   .is-done {
-    animation: pick-done 16s var(--ease) infinite;
+    animation: pick-done 18s var(--ease) infinite;
   }
 
   .pick-skeleton {
-    animation: pick-skeleton 16s var(--ease) infinite;
+    animation: pick-skeleton 18s var(--ease) infinite;
   }
 
   .pick-row:nth-child(2) {
-    animation: pick-row-1 16s var(--ease) infinite;
+    animation: pick-row-1 18s var(--ease) infinite;
   }
 
   .pick-row:nth-child(3) {
-    animation: pick-row-2 16s var(--ease) infinite;
+    animation: pick-row-2 18s var(--ease) infinite;
   }
 
   .pick-row:nth-child(4) {
-    animation: pick-row-3 16s var(--ease) infinite;
+    animation: pick-row-3 18s var(--ease) infinite;
   }
 
   .pick-row:nth-child(5) {
-    animation: pick-row-4 16s var(--ease) infinite;
+    animation: pick-row-4 18s var(--ease) infinite;
   }
 
   .pick-row:nth-child(6) {
-    animation: pick-row-5 16s var(--ease) infinite;
+    animation: pick-row-5 18s var(--ease) infinite;
   }
 
   .pick-row:nth-child(7) {
-    animation: pick-row-6 16s var(--ease) infinite;
+    animation: pick-row-6 18s var(--ease) infinite;
   }
 
-  .hero-demo:hover * {
+  .hero-demo:hover *,
+  .hero-demo:focus-within * {
     animation-play-state: paused;
   }
 }
@@ -753,117 +795,117 @@ h1 {
 }
 
 @keyframes pick-searching {
-  0%, 33.75%, 87.5%, 100% {
+  0%, 41.111%, 88.889%, 100% {
     opacity: 1;
   }
-  35.5%, 85% {
+  42.667%, 86.667% {
     opacity: 0;
   }
 }
 
 @keyframes pick-done {
-  0%, 33.75%, 85%, 100% {
+  0%, 41.111%, 86.667%, 100% {
     opacity: 0;
   }
-  35.5%, 82.5% {
+  42.667%, 84.444% {
     opacity: 1;
   }
 }
 
 @keyframes pick-skeleton {
-  0%, 7.5%, 87.5%, 100% {
+  0%, 6.667%, 88.889%, 100% {
     opacity: 1;
   }
-  9.25%, 85% {
+  8.222%, 86.667% {
     opacity: 0;
   }
 }
 
 @keyframes pick-row-1 {
-  0%, 7.5% {
+  0%, 6.667% {
     opacity: 0;
     transform: translateY(8px);
   }
-  9.25%, 82.5% {
+  8.222%, 84.444% {
     opacity: 1;
     transform: none;
   }
-  85%, 100% {
+  86.667%, 100% {
     opacity: 0;
     transform: none;
   }
 }
 
 @keyframes pick-row-2 {
-  0%, 11.875% {
+  0%, 12.778% {
     opacity: 0;
     transform: translateY(8px);
   }
-  13.625%, 82.5% {
+  14.333%, 84.444% {
     opacity: 1;
     transform: none;
   }
-  85%, 100% {
+  86.667%, 100% {
     opacity: 0;
     transform: none;
   }
 }
 
 @keyframes pick-row-3 {
-  0%, 16.25% {
+  0%, 18.889% {
     opacity: 0;
     transform: translateY(8px);
   }
-  18%, 82.5% {
+  20.444%, 84.444% {
     opacity: 1;
     transform: none;
   }
-  85%, 100% {
+  86.667%, 100% {
     opacity: 0;
     transform: none;
   }
 }
 
 @keyframes pick-row-4 {
-  0%, 20.625% {
+  0%, 25% {
     opacity: 0;
     transform: translateY(8px);
   }
-  22.375%, 82.5% {
+  26.556%, 84.444% {
     opacity: 1;
     transform: none;
   }
-  85%, 100% {
+  86.667%, 100% {
     opacity: 0;
     transform: none;
   }
 }
 
 @keyframes pick-row-5 {
-  0%, 25% {
+  0%, 31.111% {
     opacity: 0;
     transform: translateY(8px);
   }
-  26.75%, 82.5% {
+  32.667%, 84.444% {
     opacity: 1;
     transform: none;
   }
-  85%, 100% {
+  86.667%, 100% {
     opacity: 0;
     transform: none;
   }
 }
 
 @keyframes pick-row-6 {
-  0%, 29.375% {
+  0%, 37.222% {
     opacity: 0;
     transform: translateY(8px);
   }
-  31.125%, 82.5% {
+  38.778%, 84.444% {
     opacity: 1;
     transform: none;
   }
-  85%, 100% {
+  86.667%, 100% {
     opacity: 0;
     transform: none;
   }
@@ -952,6 +994,22 @@ h1 {
   margin: 6px 0 0;
   font-size: 18px;
   color: var(--text-2);
+}
+
+/* After a jump from the picker the hairline above the section lights up once. */
+@media (prefers-reduced-motion: no-preference) {
+  .feature:target {
+    animation: feature-target 2.4s var(--ease) 1;
+  }
+}
+
+@keyframes feature-target {
+  0%, 40% {
+    border-top-color: rgba(237, 237, 237, 0.5);
+  }
+  100% {
+    border-top-color: rgba(237, 237, 237, 0.08);
+  }
 }
 
 .feature-visual {

@@ -60,22 +60,22 @@
         </div>
       </div>
 
-      <div class="hero-demo" aria-hidden="true">
+      <div class="hero-demo">
         <div class="picker">
           <p class="pick-title">Alles an einem Ort</p>
-          <div class="pick-status">
+          <div class="pick-status" aria-hidden="true">
             <p class="pick-heading"><span class="is-searching">Treffer</span><span class="is-done">6 Treffer</span></p>
             <p class="pick-detail"><span class="is-searching"><span class="shimmer">Quellen werden durchsucht</span></span><span class="is-done">Alle Quellen durchsucht.</span></p>
           </div>
-          <div class="pick-rows">
-            <div class="pick-skeleton"><i></i><i></i></div>
-            <div class="pick-row"><span class="pick-text"><span class="pick-name">Live-TV</span><span class="pick-source">Xtream und M3U, mit Programm in einer Zeitleiste</span></span></div>
-            <div class="pick-row"><span class="pick-text"><span class="pick-name">Filme und Serien</span><span class="pick-source">VOID ergänzt Poster, Infos und Besetzung automatisch</span></span></div>
-            <div class="pick-row"><span class="pick-text"><span class="pick-name">VOID Connect</span><span class="pick-source">Deine eigene Website wird zur Bibliothek</span></span></div>
-            <div class="pick-row"><span class="pick-text"><span class="pick-name">VDownloader</span><span class="pick-source">RAR-Links laden, beim Entpacken schauen, auch aufs NAS</span></span></div>
-            <div class="pick-row"><span class="pick-text"><span class="pick-name">Telegram</span><span class="pick-source">Videos aus deinen Chats auf dem Fernseher</span></span></div>
-            <div class="pick-row"><span class="pick-text"><span class="pick-name">Stremio-Add-ons</span><span class="pick-source">Deine Add-ons laufen direkt in VOID</span></span></div>
-          </div>
+          <nav class="pick-rows" aria-label="Highlights">
+            <div class="pick-skeleton" aria-hidden="true"><i></i><i></i></div>
+            <a class="pick-row" href="#iptv"><span class="pick-text"><span class="pick-name">Live-TV</span><span class="pick-source">Xtream und M3U, mit Programm in einer Timeline</span></span></a>
+            <a class="pick-row" href="#features-title"><span class="pick-text"><span class="pick-name">Filme und Serien</span><span class="pick-source">VOID ergänzt Poster, Infos und Besetzung automatisch</span></span></a>
+            <a class="pick-row" href="#connect"><span class="pick-text"><span class="pick-name">VOID Connect</span><span class="pick-source">Deine eigene Website wird zur Bibliothek</span></span></a>
+            <a class="pick-row" href="#vdownloader"><span class="pick-text"><span class="pick-name">VDownloader</span><span class="pick-source">RAR-Links laden, beim Entpacken schauen, NAS inklusive</span></span></a>
+            <a class="pick-row" href="#telegram"><span class="pick-text"><span class="pick-name">Telegram</span><span class="pick-source">Videos aus deinen Chats auf dem Fernseher</span></span></a>
+            <a class="pick-row" href="#addons"><span class="pick-text"><span class="pick-name">Stremio-Add-ons</span><span class="pick-source">Deine Add-ons laufen direkt in VOID</span></span></a>
+          </nav>
         </div>
       </div>
 
@@ -101,23 +101,35 @@
     </figure>
 
     <section class="showcase wrap" aria-label="An Bord">
-      <article class="feature" aria-labelledby="connect-title">
+      <article class="feature" id="connect" aria-labelledby="connect-title">
         <p class="overline">VOID Connect</p>
         <h2 id="connect-title">Deine eigene Bibliothek</h2>
         <p class="body">Mit VOID Connect wird aus deinen Quellen eine eigene Bibliothek mit Postern, ganz ohne externen Server. Alles läuft direkt auf deinem Fernseher oder Handy. Schreib eine Quelle selbst, lass einen KI-Assistenten sie entwerfen und über die VOID-Connect-API gleich selbst testen, oder füge eine fertige mit einem einzigen Link hinzu.</p>
         <div class="feature-visual"><!-- screenshot: VOID Connect --></div>
       </article>
-      <article class="feature" aria-labelledby="vdl-title">
+      <article class="feature" id="vdownloader" aria-labelledby="vdl-title">
         <p class="overline">VDownloader</p>
         <h2 id="vdl-title">Laden, entpacken, schauen</h2>
         <p class="body">Gib VOID einfach Links, auch zu RAR-Archiven. VOID lädt die Dateien, entpackt Archive automatisch, auch mehrteilige, und speichert alles direkt auf dem Fernseher, einem USB-Stick oder einem NAS. Du kannst schon schauen, während noch entpackt wird. Auf Wunsch wartet der Download bis zur Nacht.</p>
         <div class="feature-visual"><!-- screenshot: VDownloader --></div>
       </article>
-      <article class="feature" aria-labelledby="telegram-title">
+      <article class="feature" id="telegram" aria-labelledby="telegram-title">
         <p class="overline">Telegram</p>
         <h2 id="telegram-title">Deine Telegram-Videos</h2>
         <p class="body">Melde dich mit deinem Telegram-Konto an und spiel Videos aus deinen eigenen Chats und Kanälen am Fernseher oder Handy ab, gleich neben dem Rest deiner Bibliothek.</p>
         <div class="feature-visual"><!-- screenshot: Telegram --></div>
+      </article>
+      <article class="feature" id="iptv" aria-labelledby="iptv-title">
+        <p class="overline">IPTV</p>
+        <h2 id="iptv-title">Live-TV von deinem Anbieter</h2>
+        <p class="body">Läuft mit gängigen IPTV-Anbietern: Xtream-Zugangsdaten oder M3U-Link eintragen, am Fernseher oder bequem im Browser am Handy, fertig. Alle Sender stehen mit Programm in einer Timeline, und weil VOID das Programm in einer lokalen Datenbank vorhält, ist es sofort da. Zapp schnell durch deine Sender, hol Verpasstes nach, wenn dein Anbieter ein Archiv hat, und nimm Sendungen direkt aus dem Programm auf.</p>
+        <div class="feature-visual"><!-- screenshot: Live-TV --></div>
+      </article>
+      <article class="feature" id="addons" aria-labelledby="addons-title">
+        <p class="overline">Stremio-Add-ons</p>
+        <h2 id="addons-title">Deine Add-ons, direkt in VOID</h2>
+        <p class="body">Füge Stremio-kompatible Add-ons mit ihrem Link hinzu, am Fernseher oder vom Handy und PC aus. Ihre Kataloge findest du im Add-on-Bereich, und beim Abspielen stehen ihre Quellen in derselben Auswahl wie deine Playlists. Gekoppelte Geräte übernehmen deine Add-ons.</p>
+        <div class="feature-visual"><!-- screenshot: Add-ons --></div>
       </article>
     </section>
 
@@ -137,14 +149,14 @@
     <section class="features wrap" aria-labelledby="features-title">
       <h2 class="section-title" id="features-title">Was VOID Player kann</h2>
       <div class="grid">
-        <article class="tile"><h3>Flüssig, auch auf schwachen Geräten</h3><p>VOID ist auf Tempo gebaut und läuft flüssig, auch auf günstigen TV-Boxen mit 2 GB Arbeitsspeicher.</p></article>
-        <article class="tile"><h3>Live-TV mit Programmführer</h3><p>Alle Sender in einer Zeitleiste. Sendungen direkt aus dem Programm starten oder Verpasstes nachholen, wenn dein Anbieter es unterstützt.</p></article>
+        <article class="tile"><h3>Flüssig, auch auf schwachen Geräten</h3><p>Auf Tempo gebaut und flüssig, auch auf günstigen TV-Boxen mit 1,5 GB Arbeitsspeicher. Am Fernseher spielt Media3, der Player von Android, über den Hardware-Decoder deines Geräts: 4K mit HDR10 und Dolby Vision, Dolby- und DTS-Ton direkt an den Receiver. Am Handy spielt mpv fast jedes Format.</p></article>
+        <article class="tile"><h3>Live-TV mit Programmführer</h3><p>Alle Sender in einer Timeline. Sendungen direkt aus dem Programm starten oder Verpasstes nachholen, wenn dein Anbieter es unterstützt.</p></article>
         <article class="tile"><h3>Filme und Serien</h3><p>VOID versorgt deine Bibliothek selbst mit Postern, Beschreibungen und Besetzung aus hochwertigen Film-Datenbanken. Weiterschauen, wo du aufgehört hast, auf jedem deiner Geräte.</p></article>
         <article class="tile"><h3>Einrichten im Browser</h3><p>Playlists (Xtream, M3U, SMB) und Add-on-Links gibst du bequem am Handy oder PC im Browser ein. Alles bleibt lokal in deinem WLAN.</p></article>
         <article class="tile"><h3>Sync ohne Cloud</h3><p>Handy und Fernseher einmal koppeln. Verlauf, Favoriten und Einstellungen sind auf allen Geräten gleich.</p></article>
         <article class="tile"><h3>Aufnahmen</h3><p>Am Fernseher aus dem Programm aufnehmen. Später ansehen oder die Aufnahme aufs Handy kopieren.</p></article>
         <article class="tile"><h3>Profile</h3><p>Ein Profil für alle im Haushalt, auch ein Kinderprofil mit eigenen Regeln.</p></article>
-        <article class="tile"><h3>Sport</h3><p>Die Spiele deiner Teams von heute und auf welchem deiner Sender sie laufen.</p></article>
+        <article class="tile"><h3>Sport</h3><p>Spielplan, Ergebnisse und Live-Stände deiner Teams auf einen Blick. Du siehst, wann und auf welchem deiner Sender ein Spiel läuft, und startest es mit einem Klick.</p></article>
         <article class="tile"><h3>Updates</h3><p>Neue Versionen kommen direkt in der App. Einmal bestätigen, fertig.</p></article>
       </div>
     </section>
