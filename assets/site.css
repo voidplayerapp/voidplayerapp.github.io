@@ -5,6 +5,12 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "Michroma";
+  src: url("fonts/Michroma-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
   font-family: "Alumni Sans";
   src: url("fonts/AlumniSans-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
@@ -145,11 +151,13 @@ code {
   width: 30px;
 }
 
-.brand span {
-  font-family: "Alumni Sans", "Figtree", sans-serif;
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+/* The wordmark follows the logo: wide, light capitals (Michroma is the closest free face). */
+.wordmark {
+  font-family: "Michroma", "Figtree", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .lang {
@@ -263,9 +271,9 @@ code {
 .status {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 0;
   margin: 0 0 28px;
-  padding: 7px 14px 7px 12px;
+  padding: 7px 14px;
   border-radius: 999px;
   background: rgba(237, 237, 237, 0.08);
   font-size: 14px;
@@ -273,11 +281,15 @@ code {
   color: var(--text-2);
 }
 
-.status .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--status);
+.status > span:first-child {
+  color: var(--text);
+}
+
+.status-version {
+  margin-left: 11px;
+  padding-left: 11px;
+  border-left: 1px solid rgba(237, 237, 237, 0.16);
+  font-variant-numeric: tabular-nums;
 }
 
 h1 {
@@ -289,12 +301,65 @@ h1 {
   letter-spacing: 0.005em;
 }
 
+/* The title as a brand mark (user 29.10., variant D2): VOID large in the logo's silver, PLAYER small and
+   spaced beside it behind a hairline. */
+.lockup {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.6vw, 22px);
+  margin: 0;
+  font-family: "Michroma", "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.lockup-void {
+  margin-right: -0.2em;
+  font-size: clamp(44px, 6vw, 76px);
+  letter-spacing: 0.2em;
+  color: #e6e6e9;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .lockup-void {
+    color: transparent;
+    background: linear-gradient(180deg, #ffffff 0%, #ececef 38%, #b3b3b9 72%, #8d8d94 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-stroke: 0.6px rgba(255, 255, 255, 0.35);
+  }
+}
+
+.lockup-player {
+  padding-left: clamp(12px, 1.6vw, 22px);
+  border-left: 1px solid rgba(237, 237, 237, 0.18);
+  font-size: clamp(10.5px, 0.55vw + 7px, 15px);
+  letter-spacing: 0.48em;
+  line-height: 1.9;
+  text-transform: uppercase;
+  color: #a3a3a9;
+}
+
+.claim {
+  max-width: 34ch;
+  margin: 30px 0 0;
+  font-size: clamp(19px, 2.2vw, 23px);
+  font-weight: 650;
+  line-height: 1.4;
+  color: var(--text);
+}
+
 .lead {
   max-width: 34ch;
-  margin: 26px 0 0;
+  margin: 10px 0 0;
   font-size: clamp(19px, 2.2vw, 23px);
   line-height: 1.45;
   color: var(--text-2);
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .actions {
@@ -351,7 +416,7 @@ h1 {
 /* Download buttons behave like the app's hero buttons: dark at rest, the white focus pill on hover and focus. */
 .dl {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 12px;
   padding: 13px 18px;
   border-radius: 12px;
@@ -361,7 +426,16 @@ h1 {
   transition: background-color 280ms var(--ease), color 280ms var(--ease);
 }
 
+.dl-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: -2px;
+  vertical-align: 0;
+  opacity: 0.8;
+}
+
 .dl .size {
+  margin-left: auto;
   font-size: 13px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
@@ -385,24 +459,60 @@ h1 {
   color: rgba(23, 32, 51, 0.62);
 }
 
-.tv-hint {
-  margin: 16px 0 0;
-  font-size: 14px;
+/* A quiet line: the reports of the three files at VirusTotal. */
+.vt {
+  margin: 14px 0 0;
+  font-size: 13.5px;
   color: var(--text-3);
 }
 
-/* Next to the title: the TV source picker. The status line shimmers while your sources are searched (base
-   45 %, a soft band of full white, 1.6 s travel and 0.5 s rest, as in the app), the results pop in one by one,
-   the status turns to "all searched", and after a while the scene starts again (14 s).
-   It pauses under the pointer; with reduced motion it shows the finished results. */
-.picker {
-  padding: 30px 28px 26px;
-  border-radius: 20px;
-  background: var(--frame);
+.vt-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+  vertical-align: -3px;
 }
 
-.pick-overline {
+.vt a {
+  color: var(--text-2);
+  text-decoration: underline;
+  text-decoration-color: rgba(237, 237, 237, 0.24);
+  text-underline-offset: 3px;
+}
+
+.vt a:hover {
+  color: var(--text);
+}
+
+/* Downloader code for TVs, with the Downloader app's own icon so people know which app is meant. */
+.dl-code {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: center;
+  max-width: 520px;
+  margin-top: 22px;
+  padding: 14px 18px 14px 14px;
+  border-radius: 14px;
+  background: var(--tile);
+}
+
+.dl-code-icon {
+  grid-row: 1 / span 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+}
+
+.dl-code-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 12px;
   margin: 0;
+}
+
+.dl-code-label {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -410,8 +520,33 @@ h1 {
   color: var(--text-2);
 }
 
+.dl-code-number {
+  font-size: 24px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.dl-code-hint {
+  margin: 2px 0 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-3);
+}
+
+/* Next to the title: the TV source picker. The status line shimmers while your sources are searched (base
+   45 %, a soft band of full white, 1.6 s travel and 0.5 s rest, as in the app), six highlights pop in one by one as results,
+   the status turns to "all searched", and after a while the scene starts again (16 s).
+   It pauses under the pointer; with reduced motion it shows the finished results. */
+.picker {
+  padding: 30px 28px 26px;
+  border-radius: 20px;
+  background: var(--frame);
+}
+
 .pick-title {
-  margin: 6px 0 0;
+  margin: 0;
   font-size: 28px;
   font-weight: 800;
   line-height: 1.1;
@@ -560,31 +695,39 @@ h1 {
   }
 
   .is-searching {
-    animation: pick-searching 14s var(--ease) infinite;
+    animation: pick-searching 16s var(--ease) infinite;
   }
 
   .is-done {
-    animation: pick-done 14s var(--ease) infinite;
+    animation: pick-done 16s var(--ease) infinite;
   }
 
   .pick-skeleton {
-    animation: pick-skeleton 14s var(--ease) infinite;
+    animation: pick-skeleton 16s var(--ease) infinite;
   }
 
   .pick-row:nth-child(2) {
-    animation: pick-row-1 14s var(--ease) infinite;
+    animation: pick-row-1 16s var(--ease) infinite;
   }
 
   .pick-row:nth-child(3) {
-    animation: pick-row-2 14s var(--ease) infinite;
+    animation: pick-row-2 16s var(--ease) infinite;
   }
 
   .pick-row:nth-child(4) {
-    animation: pick-row-3 14s var(--ease) infinite;
+    animation: pick-row-3 16s var(--ease) infinite;
   }
 
   .pick-row:nth-child(5) {
-    animation: pick-row-4 14s var(--ease) infinite;
+    animation: pick-row-4 16s var(--ease) infinite;
+  }
+
+  .pick-row:nth-child(6) {
+    animation: pick-row-5 16s var(--ease) infinite;
+  }
+
+  .pick-row:nth-child(7) {
+    animation: pick-row-6 16s var(--ease) infinite;
   }
 
   .hero-demo:hover * {
@@ -610,111 +753,117 @@ h1 {
 }
 
 @keyframes pick-searching {
-  0%,
-  30%,
-  85.714%,
-  100% {
+  0%, 33.75%, 87.5%, 100% {
     opacity: 1;
   }
-  32%,
-  82.857% {
+  35.5%, 85% {
     opacity: 0;
   }
 }
 
 @keyframes pick-done {
-  0%,
-  30%,
-  82.857%,
-  100% {
+  0%, 33.75%, 85%, 100% {
     opacity: 0;
   }
-  32%,
-  80% {
+  35.5%, 82.5% {
     opacity: 1;
   }
 }
 
 @keyframes pick-skeleton {
-  0%,
-  8.571%,
-  85.714%,
-  100% {
+  0%, 7.5%, 87.5%, 100% {
     opacity: 1;
   }
-  10.571%,
-  82.857% {
+  9.25%, 85% {
     opacity: 0;
   }
 }
 
 @keyframes pick-row-1 {
-  0%,
-  8.571% {
+  0%, 7.5% {
     opacity: 0;
     transform: translateY(8px);
   }
-  10.571%,
-  80% {
+  9.25%, 82.5% {
     opacity: 1;
     transform: none;
   }
-  82.857%,
-  100% {
+  85%, 100% {
     opacity: 0;
     transform: none;
   }
 }
 
 @keyframes pick-row-2 {
-  0%,
-  13.571% {
+  0%, 11.875% {
     opacity: 0;
     transform: translateY(8px);
   }
-  15.571%,
-  80% {
+  13.625%, 82.5% {
     opacity: 1;
     transform: none;
   }
-  82.857%,
-  100% {
+  85%, 100% {
     opacity: 0;
     transform: none;
   }
 }
 
 @keyframes pick-row-3 {
-  0%,
-  18.571% {
+  0%, 16.25% {
     opacity: 0;
     transform: translateY(8px);
   }
-  20.571%,
-  80% {
+  18%, 82.5% {
     opacity: 1;
     transform: none;
   }
-  82.857%,
-  100% {
+  85%, 100% {
     opacity: 0;
     transform: none;
   }
 }
 
 @keyframes pick-row-4 {
-  0%,
-  23.571% {
+  0%, 20.625% {
     opacity: 0;
     transform: translateY(8px);
   }
-  25.571%,
-  80% {
+  22.375%, 82.5% {
     opacity: 1;
     transform: none;
   }
-  82.857%,
-  100% {
+  85%, 100% {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+@keyframes pick-row-5 {
+  0%, 25% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  26.75%, 82.5% {
+    opacity: 1;
+    transform: none;
+  }
+  85%, 100% {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+@keyframes pick-row-6 {
+  0%, 29.375% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  31.125%, 82.5% {
+    opacity: 1;
+    transform: none;
+  }
+  85%, 100% {
     opacity: 0;
     transform: none;
   }
@@ -878,7 +1027,7 @@ h1 {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -1088,6 +1237,11 @@ h1 {
     gap: 16px;
   }
 
+  .wordmark {
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+  }
+
   .social {
     gap: 6px;
   }
@@ -1104,6 +1258,20 @@ h1 {
 
   .picker {
     padding: 24px 18px 20px;
+  }
+
+  .pick-source {
+    white-space: normal;
+  }
+
+  .dl-code {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 14px;
+  }
+
+  .dl-code-icon {
+    width: 40px;
+    height: 40px;
   }
 
   .pick-title {

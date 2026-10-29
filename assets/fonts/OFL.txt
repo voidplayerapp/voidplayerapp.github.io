@@ -1,6 +1,7 @@
 Fonts in this folder:
 - Figtree (Figtree-VariableFont_wght.ttf)
 - Alumni Sans (AlumniSans-VariableFont_wght.ttf)
+- Michroma (Michroma-Regular.ttf)
 
 The copyright notice of each font is embedded in its font file (name table).
 These fonts are licensed under the SIL Open Font License, Version 1.1.
