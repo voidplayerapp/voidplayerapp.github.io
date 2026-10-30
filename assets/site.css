@@ -292,6 +292,25 @@ code {
   font-variant-numeric: tabular-nums;
 }
 
+.status-source {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 11px;
+  padding: 2px 0 2px 11px;
+  border-left: 1px solid rgba(237, 237, 237, 0.16);
+  transition: color 150ms ease;
+}
+
+.status-source .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.status-source:hover,
+.status-source:focus-visible {
+  color: var(--text);
+}
+
 h1 {
   margin: 0;
   font-family: "Alumni Sans", "Figtree", sans-serif;
@@ -434,7 +453,18 @@ h1 {
   opacity: 0.8;
 }
 
+.dl-source {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
 .dl .size {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  white-space: nowrap;
   margin-left: auto;
   font-size: 13px;
   font-weight: 600;
@@ -1291,17 +1321,27 @@ a.pick-row:focus-visible {
     font-size: 16px;
   }
 
+  .brand {
+    gap: 8px;
+  }
+
   .top-end {
-    gap: 16px;
+    gap: 12px;
+  }
+
+  .lang {
+    gap: 8px;
+    font-size: 13px;
   }
 
   .wordmark {
     font-size: 11.5px;
     letter-spacing: 0.1em;
+    white-space: nowrap;
   }
 
   .social {
-    gap: 6px;
+    gap: 4px;
   }
 
   .hero {
@@ -1388,5 +1428,11 @@ a.pick-row:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .top .wordmark {
+    display: none;
   }
 }
