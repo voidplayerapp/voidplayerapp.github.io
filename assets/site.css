@@ -1436,3 +1436,15 @@ a.pick-row:focus-visible {
     display: none;
   }
 }
+
+
+/* Preview addition: Android platform mark beside the existing GitHub link. */
+.status-platform {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 11px;
+  padding-left: 11px;
+  border-left: 1px solid rgba(237, 237, 237, 0.16);
+}
+.status-platform .icon { width: 20px; height: 20px; }
+.status-platform + .status-source { margin-left: 10px; padding-left: 0; border-left: 0; }
