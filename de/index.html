@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VOID Player · Live-TV, Filme und Serien für Android TV und Handy</title>
-  <meta name="description" content="Der VOID Player spielt deine IPTV-Playlists, Filme, Serien und Telegram-Videos auf Android TV und Android-Handys ab. Kostenlos während der geschlossenen Beta.">
+  <title>VOID Player · IPTV-Player für Android TV, Fire TV und Handy</title>
+  <meta name="description" content="Xtream, M3U, Filme und Serien vom NAS, RAR-Downloads und Telegram: Der VOID Player macht daraus deine Bibliothek, mit Postern, TV-Programm und Sync. Kostenlos während der Beta.">
   <meta name="theme-color" content="#14141a">
   <meta property="og:type" content="website">
   <meta property="og:title" content="VOID Player">
-  <meta property="og:description" content="Der VOID Player spielt deine IPTV-Playlists, Filme, Serien und Telegram-Videos auf Android TV und Android-Handys ab. Kostenlos während der geschlossenen Beta.">
+  <meta property="og:description" content="Xtream, M3U, Filme und Serien vom NAS, RAR-Downloads und Telegram: Der VOID Player macht daraus deine Bibliothek, mit Postern, TV-Programm und Sync. Kostenlos während der Beta.">
   <meta property="og:url" content="https://voidplayerapp.github.io/de/">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
@@ -18,7 +18,7 @@
   <link rel="alternate" hreflang="x-default" href="https://voidplayerapp.github.io/">
   <link rel="preload" href="../assets/fonts/Figtree-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="../assets/fonts/Michroma-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="../assets/site.css?v=f2ba75ef98ef">
+  <link rel="stylesheet" href="../assets/site.css?v=f4a1d4a912bb">
 </head>
 <body>
   <svg class="sprite" aria-hidden="true" focusable="false">
@@ -57,45 +57,38 @@
       <div class="hero-copy">
         <p class="status"><span>Closed Beta</span><span class="status-version">0.9.2</span><span class="status-platform" role="img" aria-label="Für Android" title="Für Android"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-android"/></svg></span><a class="status-source" href="https://github.com/voidplayerapp/void-player" title="VOID Player auf GitHub" aria-label="VOID Player auf GitHub"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg></a></p>
         <h1 class="lockup"><span class="lockup-void">VOID</span><span class="lockup-player">Player</span></h1>
-        <p class="claim">Live-TV, Filme und Serien. Auf Fernseher und Handy.</p>
-        <p class="lead">Schau Live-TV aus deiner Playlist, Filme vom NAS und Videos aus Telegram. Der VOID Player zeigt dir das Programm, ergänzt Filminfos und gleicht Verlauf und Favoriten im Heimnetz ab. Kein zusätzliches Konto. Kein Tracking.</p>
+        <p class="headline"><span>Du bringst die Quellen mit.</span> <span class="headline-accent">Den Rest macht VOID.</span></p>
+        <p class="lead">Xtream, M3U, Filme und Serien vom NAS, RAR-Links oder Telegram – der VOID Player macht daraus deine Bibliothek. Automatisch:</p>
+        <ul class="auto-list">
+          <li>Poster, Infos und Besetzung zu jedem Film und jeder Serie</li>
+          <li>Das TV-Programm zu jedem Sender: was jetzt läuft, was danach kommt</li>
+          <li>Merkliste und Weiterschauen auf Fernseher und Handy</li>
+        </ul>
         <div class="actions">
-          <a class="btn btn-primary" href="mailto:voidplayer@outlook.de?subject=VOID%20Player%20Beta&amp;body=Hallo%2C%0A%0Aich%20w%C3%BCrde%20den%20VOID%20Player%20gerne%20ausprobieren.%0A%0AViele%20Gr%C3%BC%C3%9Fe">Zugangscode anfragen</a>
-          <p class="note">Kostenlos während der Beta. Ein Code gilt für TV und Handy.</p>
+          <div class="action-row">
+            <a class="btn btn-primary" href="mailto:voidplayer@outlook.de?subject=VOID%20Player%20Beta&amp;body=Hallo%2C%0A%0Aich%20w%C3%BCrde%20den%20VOID%20Player%20gerne%20ausprobieren.%0A%0AViele%20Gr%C3%BC%C3%9Fe">Zugangscode anfragen</a>
+            <a class="code-link" href="#download">Code schon da? Herunterladen <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="note">Kostenlos während der Beta · Ein Code für TV und Handy</p>
         </div>
       </div>
 
       <div class="hero-demo">
         <div class="picker">
-          <p class="pick-title">Deine Inhalte im VOID Player</p>
+          <p class="pick-title">Deine Quellen im VOID Player</p>
           <div class="pick-status" aria-hidden="true">
             <p class="pick-heading"><span class="is-searching">Treffer</span><span class="is-done">6 Treffer</span></p>
             <p class="pick-detail"><span class="is-searching"><span class="shimmer">Quellen werden durchsucht</span></span><span class="is-done">Alle Quellen durchsucht.</span></p>
           </div>
           <nav class="pick-rows" aria-label="Highlights">
             <div class="pick-skeleton" aria-hidden="true"><i></i><i></i></div>
-            <a class="pick-row" href="#iptv"><span class="pick-text"><span class="pick-name">Live-TV</span><span class="pick-source">Xtream- und M3U-Playlists mit Programmführer</span></span></a>
-            <a class="pick-row" href="#features-title"><span class="pick-text"><span class="pick-name">Filme und Serien</span><span class="pick-source">Der VOID Player ergänzt Poster und Filminfos</span></span></a>
-            <a class="pick-row" href="#connect"><span class="pick-text"><span class="pick-name">VOID Connect</span><span class="pick-source">Webquellen als Kataloge mit Postern nutzen</span></span></a>
-            <a class="pick-row" href="#vdownloader"><span class="pick-text"><span class="pick-name">VDownloader</span><span class="pick-source">RAR-Links laden und beim Entpacken schauen</span></span></a>
-            <a class="pick-row" href="#telegram"><span class="pick-text"><span class="pick-name">Telegram</span><span class="pick-source">Deine Chats und Kanäle auf TV und Handy</span></span></a>
-            <a class="pick-row" href="#addons"><span class="pick-text"><span class="pick-name">Stremio-Add-ons</span><span class="pick-source">Add-ons per Link im VOID Player hinzufügen</span></span></a>
+            <a class="pick-row" href="#iptv"><span class="pick-text"><span class="pick-name">Live-TV</span><span class="pick-source">Xtream und M3U in einer Timeline</span></span></a>
+            <a class="pick-row" href="#features-title"><span class="pick-text"><span class="pick-name">Filme und Serien</span><span class="pick-source">Aus Playlist, NAS oder USB, mit Postern</span></span></a>
+            <a class="pick-row" href="#connect"><span class="pick-text"><span class="pick-name">VOID Connect</span><span class="pick-source">Bibliotheken aus eigenen Quellen</span></span></a>
+            <a class="pick-row" href="#vdownloader"><span class="pick-text"><span class="pick-name">VDownloader</span><span class="pick-source">RAR-Links laden, beim Entpacken schauen</span></span></a>
+            <a class="pick-row" href="#telegram"><span class="pick-text"><span class="pick-name">Telegram</span><span class="pick-source">Videos aus deinen Chats auf dem Fernseher</span></span></a>
+            <a class="pick-row" href="#addons"><span class="pick-text"><span class="pick-name">Stremio-Add-ons</span><span class="pick-source">Für Filme, Serien und Live-TV</span></span></a>
           </nav>
-        </div>
-      </div>
-
-      <div class="downloads" id="download">
-        <p class="downloads-title">Den VOID Player herunterladen</p>
-        <div class="download-row">
-          <a class="dl" href="../tv/" aria-label="VOID Player für Fernseher und TV-Boxen von GitHub herunterladen" title="APK-Download über GitHub"><svg class="icon dl-icon" aria-hidden="true" focusable="false"><use href="#icon-tv"/></svg><span>Fernseher &amp; TV-Boxen</span><span class="size"><svg class="icon dl-source" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg><span>135 MB</span></span></a>
-          <a class="dl" href="../handy/" aria-label="VOID Player für Android-Handys von GitHub herunterladen" title="APK-Download über GitHub"><svg class="icon dl-icon" aria-hidden="true" focusable="false"><use href="#icon-phone"/></svg><span>Handys</span><span class="size"><svg class="icon dl-source" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg><span>146 MB</span></span></a>
-          <a class="dl dl-quiet" href="../universal/" aria-label="VOID Player für ARM-Geräte von GitHub herunterladen" title="APK-Download über GitHub"><svg class="icon dl-icon" aria-hidden="true" focusable="false"><use href="#icon-devices"/></svg><span>Universal</span><span class="size"><svg class="icon dl-source" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg><span>223 MB</span></span></a>
-        </div>
-        <p class="vt"><svg class="icon vt-icon" aria-hidden="true" focusable="false"><use href="#icon-verified"/></svg><span>Von VirusTotal geprüft:</span> <a href="https://www.virustotal.com/gui/file/4369be408df0bf2d71298c66ff9a785bbb65d68636534a12876f0b03c51d10e9">TV</a>, <a href="https://www.virustotal.com/gui/file/2af36ff0ce894506cc75f662e152ea3c5c1d259c405e689803e8cb106aafff05">Handy</a>, <a href="https://www.virustotal.com/gui/file/80dda3a0fba3e22313e6f3fd7bd41bdfa0786c22afdf7bceeb732f3445876955">Universal</a></p>
-        <div class="dl-code">
-          <img class="dl-code-icon" src="../assets/img/downloader.png" alt="" width="44" height="44">
-          <p class="dl-code-main"><span class="dl-code-label">Downloader-Code</span><span class="dl-code-number">8238632</span></p>
-          <p class="dl-code-hint">Öffne am Fernseher die App „Downloader“ und gib den Code ein. Alternativ kannst du <code>voidplayerapp.github.io/tv</code> eingeben.</p>
         </div>
       </div>
     </section>
@@ -108,32 +101,32 @@
     <section class="showcase wrap" aria-label="An Bord">
       <article class="feature" id="connect" aria-labelledby="connect-title">
         <p class="overline">VOID Connect</p>
-        <h2 id="connect-title">Webquellen als Bibliothek nutzen</h2>
-        <p class="body">Mit VOID Connect bindest du Webquellen als Film- und Serienkataloge ein. Passende Quellen fügst du per Link hinzu. Poster und Filminfos findest du direkt im VOID Player. Ein eigener Server ist dafür nicht nötig.</p>
+        <h2 id="connect-title">Bibliotheken aus eigenen Quellen</h2>
+        <p class="body">Mit VOID Connect erstellst du Bibliotheken aus eigenen Quellen, mit Postern und Infos, direkt im VOID Player. Alles läuft auf deinem Fernseher oder Handy, ganz ohne eigenen Server. Fertige Quellen fügst du mit einem Link hinzu.</p>
         <div class="feature-visual"><!-- screenshot: VOID Connect --></div>
       </article>
       <article class="feature" id="vdownloader" aria-labelledby="vdl-title">
         <p class="overline">VDownloader</p>
-        <h2 id="vdl-title">Laden, entpacken, schauen</h2>
-        <p class="body">Füge deine Download-Links hinzu. Der VOID Player lädt Dateien, entpackt auch mehrteilige RAR-Archive und speichert auf dem Fernseher, einem USB-Stick oder NAS. Bei unterstützten Videos kannst du schon während des Entpackens schauen. Downloads lassen sich auch für die Nacht planen.</p>
+        <h2 id="vdl-title">Laden. Entpacken. Schon schauen.</h2>
+        <p class="body">Gib dem VOID Player einen Link, auch zu RAR-Archiven. Er lädt, entpackt automatisch, auch mehrteilige Archive, und speichert auf dem Fernseher, einem USB-Stick, einer SD-Karte oder deinem NAS. Unterstützte Videos startest du schon, während noch entpackt wird. Auf Wunsch wartet der Download bis zur Nacht.</p>
         <div class="feature-visual"><!-- screenshot: VDownloader --></div>
       </article>
       <article class="feature" id="telegram" aria-labelledby="telegram-title">
         <p class="overline">Telegram</p>
-        <h2 id="telegram-title">Telegram-Videos auf TV und Handy</h2>
-        <p class="body">Verbinde dein Telegram-Konto mit dem VOID Player. Dann kannst du Videos aus deinen Chats und Kanälen direkt auf dem Fernseher oder Handy abspielen.</p>
+        <h2 id="telegram-title">Telegram auf dem großen Bildschirm</h2>
+        <p class="body">Melde dich mit deinem Telegram-Konto an und spiel Videos aus deinen Chats und Kanälen direkt auf dem Fernseher oder Handy ab.</p>
         <div class="feature-visual"><!-- screenshot: Telegram --></div>
       </article>
       <article class="feature" id="iptv" aria-labelledby="iptv-title">
-        <p class="overline">IPTV</p>
-        <h2 id="iptv-title">Live-TV mit Programmführer</h2>
-        <p class="body">Füge deine Playlist per Xtream-Zugang oder M3U-Link hinzu. Der VOID Player zeigt deine Sender mit Programmführer. Du kannst Sendungen am Fernseher aufnehmen und, wenn dein Anbieter es unterstützt, verpasste Sendungen aus dem Archiv abspielen.</p>
+        <p class="overline">IPTV · Xtream · M3U</p>
+        <h2 id="iptv-title">Alle Sender. Eine Timeline.</h2>
+        <p class="body">Trag deinen Xtream-Zugang oder M3U-Link ein, mehr braucht es nicht. Alle Sender stehen mit TV-Programm in einer Timeline, gespeichert auf dem Gerät und deshalb sofort da. Verpasstes holst du aus dem Archiv, wenn dein Anbieter eins hat, und Sendungen nimmst du direkt aus der Timeline auf, am Fernseher oder Handy.</p>
         <div class="feature-visual"><!-- screenshot: Live-TV --></div>
       </article>
       <article class="feature" id="addons" aria-labelledby="addons-title">
         <p class="overline">Stremio-Add-ons</p>
-        <h2 id="addons-title">Stremio-Add-ons per Link hinzufügen</h2>
-        <p class="body">Füge Stremio-kompatible Add-ons mit ihrem Link hinzu. Ihre Kataloge und Wiedergabequellen findest du direkt im VOID Player. Beim Einrichten wählst du, welche gekoppelten Geräte die Add-ons übernehmen.</p>
+        <h2 id="addons-title">Add-ons für Filme, Serien und Live-TV</h2>
+        <p class="body">Füge Stremio-kompatible Add-ons per Link hinzu. Ihre Kataloge findest du im Add-on-Bereich, ihre Quellen stehen beim Abspielen in derselben Auswahl wie deine Playlists. Live-Add-ons erscheinen in Live-TV als eigene Senderlisten.</p>
         <div class="feature-visual"><!-- screenshot: Add-ons --></div>
       </article>
     </section>
@@ -141,47 +134,58 @@
     <section class="spot spot-flip wrap" aria-labelledby="privacy-title">
       <div class="spot-text">
         <p class="overline">Datenschutz</p>
-        <h2 id="privacy-title">Abgleich direkt im Heimnetz</h2>
-        <p class="body">Für den VOID Player brauchst du kein eigenes Konto. Verlauf, Favoriten und Einstellungen gleichen sich verschlüsselt zwischen deinen gekoppelten Geräten im Heimnetz ab. Zugangsdaten speichert der VOID Player auf deinen Geräten und überträgt sie nur an den jeweiligen Dienst.</p>
+        <h2 id="privacy-title">Deine Daten bleiben zu Hause</h2>
+        <p class="body">Zugangsdaten bleiben auf deinen Geräten und gehen nur an den Dienst, zu dem sie gehören – nie an uns. Deine Geräte gleichen sich direkt im Heimnetz ab, verschlüsselt.</p>
       </div>
       <ul class="promise">
-        <li><strong>Kein zusätzliches Konto.</strong></li>
+        <li><strong>Kein Konto.</strong></li>
         <li><strong>Kein Tracking.</strong></li>
-        <li>Abgleich ohne Cloud.</li>
+        <li>Sync ohne Cloud.</li>
       </ul>
     </section>
 
     <section class="features wrap" aria-labelledby="features-title">
       <h2 class="section-title" id="features-title">Was der VOID Player kann</h2>
       <div class="grid">
-        <article class="tile"><h3>Für Fernseher und Handy</h3><p>Am Fernseher navigierst du mit der Fernbedienung, am Handy per Touch. 4K, HDR und Mehrkanalton hängen vom Gerät und der jeweiligen Videodatei ab.</p></article>
-        <article class="tile"><h3>Sendungen nachholen</h3><p>Wenn dein Anbieter ein Archiv anbietet, kannst du verpasste Sendungen direkt aus dem Programmführer öffnen.</p></article>
-        <article class="tile"><h3>Filme und Serien</h3><p>Poster, Beschreibungen und Besetzung findest du direkt bei deinen Filmen und Serien. Dein Fortschritt wird zwischen gekoppelten Geräten abgeglichen.</p></article>
-        <article class="tile"><h3>Einrichten im Browser</h3><p>Scanne mit deinem Handy den QR-Code auf dem Fernseher. Playlists und Add-ons richtest du dann im Browser ein. Das geht auch am PC.</p></article>
-        <article class="tile"><h3>Auf deinen Geräten weiterschauen</h3><p>Fang auf dem Fernseher an und schau am Handy weiter. Gekoppelte Geräte gleichen Verlauf, Favoriten und Einstellungen im Heimnetz ab.</p></article>
-        <article class="tile"><h3>Sendungen aufnehmen</h3><p>Nimm Sendungen am Fernseher direkt aus dem Programm auf. Du kannst sie später ansehen oder die Aufnahme aufs Handy kopieren.</p></article>
-        <article class="tile"><h3>Eigene Profile im Haushalt</h3><p>Jeder im Haushalt kann ein eigenes Profil mit Verlauf und Favoriten nutzen. Kinderprofile zeigen nur die Inhalte, die du freigegeben hast.</p></article>
-        <article class="tile"><h3>Sport</h3><p>Spielplan, Ergebnisse und Live-Stände deiner Teams. Passende Sender aus deiner Playlist lassen sich direkt aus dem Sportbereich öffnen.</p></article>
-        <article class="tile"><h3>Updates direkt in der App</h3><p>Wenn eine neue Version bereitsteht, meldet sich der VOID Player in der App. Du bestätigst die Installation direkt am Gerät.</p></article>
+        <article class="tile"><h3>Dein Dashboard, deine Reihen</h3><p>Merkliste, Für dich, Trends, Sport oder deine Lieblingskategorie: Du bestimmst, welche Reihen es gibt und in welcher Reihenfolge, für Start, Filme und Serien getrennt. Jede Reihe kannst du auch als breites Spotlight hervorheben.</p></article>
+        <article class="tile"><h3>Flüssig, auch mit riesigen Listen</h3><p>Auch Playlists mit Hunderttausenden Titeln laufen flüssig, schon auf TV-Boxen mit 1,5 GB Arbeitsspeicher. Deine Bibliothek liegt dafür in einer schnellen Datenbank direkt auf dem Gerät.</p></article>
+        <article class="tile"><h3>4K, HDR und Dolby Vision</h3><p>Am Fernseher nutzt der VOID Player den Hardware-Decoder deines Geräts: 4K mit HDR10 und Dolby Vision, Dolby- und DTS-Ton direkt an den Receiver, je nach Gerät. Am Handy spielt er fast jedes Format.</p></article>
+        <article class="tile"><h3>Filme und Serien, auch vom NAS</h3><p>Deine Filmordner vom NAS oder USB-Stick werden zur Bibliothek mit Postern. Gleiche Filme aus mehreren Quellen landen auf einer Karte, du wählst nur noch die Fassung.</p></article>
+        <article class="tile"><h3>Eine Suche für alles</h3><p>Finde Filme, Serien, Sender und Schauspieler in einem Rutsch: in deinen Playlists, auf dem NAS und in großen Filmdatenbanken.</p></article>
+        <article class="tile"><h3>Sport</h3><p>Spielplan, Ergebnisse und Live-Stände deiner Teams. Du siehst, auf welchem deiner Sender ein Spiel läuft, und startest es mit einem Klick.</p></article>
+        <article class="tile"><h3>Profile für den ganzen Haushalt</h3><p>Jeder bekommt sein eigenes Profil mit Merkliste und Verlauf. Kinderprofile zeigen nur, was du freigibst.</p></article>
+        <article class="tile"><h3>Einrichten im Browser</h3><p>Scanne den QR-Code am Fernseher mit dem Handy und gib Playlists und Add-on-Links bequem im Browser ein. Das geht auch am PC.</p></article>
+        <article class="tile"><h3>Updates direkt in der App</h3><p>Neue Versionen meldet der VOID Player selbst. Einmal bestätigen, fertig.</p></article>
       </div>
     </section>
 
-    <section class="install wrap" aria-labelledby="install-title">
-      <h2 class="section-title" id="install-title">Installation</h2>
+    <section class="install wrap" id="download" aria-labelledby="install-title">
+      <h2 class="section-title" id="install-title">Herunterladen und installieren</h2>
+      <div class="download-row">
+        <a class="dl" href="../tv/" aria-label="VOID Player für Fernseher und TV-Boxen von GitHub herunterladen" title="APK-Download über GitHub"><svg class="icon dl-icon" aria-hidden="true" focusable="false"><use href="#icon-tv"/></svg><span>Fernseher &amp; TV-Boxen</span><span class="size"><svg class="icon dl-source" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg><span>135 MB</span></span></a>
+        <a class="dl" href="../handy/" aria-label="VOID Player für Android-Handys von GitHub herunterladen" title="APK-Download über GitHub"><svg class="icon dl-icon" aria-hidden="true" focusable="false"><use href="#icon-phone"/></svg><span>Handys</span><span class="size"><svg class="icon dl-source" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg><span>146 MB</span></span></a>
+        <a class="dl dl-quiet" href="../universal/" aria-label="VOID Player für ARM-Geräte von GitHub herunterladen" title="APK-Download über GitHub"><svg class="icon dl-icon" aria-hidden="true" focusable="false"><use href="#icon-devices"/></svg><span>Universal</span><span class="size"><svg class="icon dl-source" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg><span>223 MB</span></span></a>
+      </div>
+      <p class="vt"><svg class="icon vt-icon" aria-hidden="true" focusable="false"><use href="#icon-verified"/></svg><span>Von VirusTotal geprüft:</span> <a href="https://www.virustotal.com/gui/file/4369be408df0bf2d71298c66ff9a785bbb65d68636534a12876f0b03c51d10e9">TV</a>, <a href="https://www.virustotal.com/gui/file/2af36ff0ce894506cc75f662e152ea3c5c1d259c405e689803e8cb106aafff05">Handy</a>, <a href="https://www.virustotal.com/gui/file/80dda3a0fba3e22313e6f3fd7bd41bdfa0786c22afdf7bceeb732f3445876955">Universal</a></p>
       <div class="install-cols">
         <div>
           <h3>Fernseher · Android TV, Google TV, Fire TV</h3>
+          <div class="dl-code">
+            <img class="dl-code-icon" src="../assets/img/downloader.png" alt="" width="44" height="44">
+            <p class="dl-code-main"><span class="dl-code-label">Downloader-Code</span><span class="dl-code-number">8238632</span></p>
+            <p class="dl-code-hint">Statt des Codes geht auch <code>voidplayerapp.github.io/tv</code>.</p>
+          </div>
           <ol class="steps">
             <li>Installiere die App „Downloader“ aus dem App-Store deines Fernsehers.</li>
-            <li>Öffne die App und gib <code>8238632</code> oder <code>voidplayerapp.github.io/tv</code> ein.</li>
-            <li>Erlaube die Installation, wenn Android danach fragt. Öffne anschließend den VOID Player und gib deinen Zugangscode ein.</li>
+            <li>Öffne sie und gib den Downloader-Code ein.</li>
+            <li>Erlaube die Installation, wenn Android fragt. Öffne dann den VOID Player und gib deinen Zugangscode ein.</li>
           </ol>
         </div>
         <div>
           <h3>Handy</h3>
           <ol class="steps">
-            <li>Öffne <code>voidplayerapp.github.io/handy</code> im Browser auf deinem Handy.</li>
-            <li>Öffne die heruntergeladene Datei und erlaube die Installation, wenn Android danach fragt.</li>
+            <li>Öffne <code>voidplayerapp.github.io/handy</code> im Browser deines Handys.</li>
+            <li>Öffne die heruntergeladene Datei und erlaube die Installation.</li>
             <li>Öffne den VOID Player und gib deinen Zugangscode ein.</li>
           </ol>
         </div>
@@ -190,8 +194,8 @@
 
     <section class="join wrap" aria-labelledby="join-title">
       <div class="join-inner">
-        <h2 class="section-title" id="join-title">Den VOID Player ausprobieren</h2>
-        <p class="body">Einen Zugangscode bekommst du über <a href="https://discord.gg/7EcNAesKW">Discord</a> oder per E-Mail. Eine kurze Nachricht reicht. Du kannst denselben Code auf Fernseher und Handy verwenden.</p>
+        <h2 class="section-title" id="join-title">Hol dir deinen Zugangscode</h2>
+        <p class="body">Schreib uns kurz per E-Mail oder auf <a href="https://discord.gg/7EcNAesKW">Discord</a>, dann bekommst du deinen persönlichen Code.</p>
         <a class="btn btn-primary" href="mailto:voidplayer@outlook.de?subject=VOID%20Player%20Beta&amp;body=Hallo%2C%0A%0Aich%20w%C3%BCrde%20den%20VOID%20Player%20gerne%20ausprobieren.%0A%0AViele%20Gr%C3%BC%C3%9Fe">Zugangscode anfragen</a>
       </div>
     </section>
@@ -199,8 +203,7 @@
     <section class="facts wrap" aria-labelledby="facts-title">
       <p class="overline" id="facts-title">Gut zu wissen</p>
       <ul>
-        <li>Der VOID Player bringt keine Sender, Filme oder Playlists mit. Nutze die App nur mit Inhalten, für die du die Rechte hast.</li>
-        <li>Kostenlos während der Beta. Ohne Werbung, Tracking oder zusätzliches Konto.</li>
+        <li>Der VOID Player zeigt keine Werbung und bringt keine Sender, Filme oder Playlists mit. Nutze ihn nur mit Inhalten, für die du die Rechte hast.</li>
         <li>Fragen oder Rückmeldungen: <a href="mailto:voidplayer@outlook.de">voidplayer@outlook.de</a></li>
         <li class="community">Community: <a href="https://www.reddit.com/r/Voidplayer/"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-reddit"/></svg>r/Voidplayer</a> auf Reddit · <a href="https://discord.gg/7EcNAesKW"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-discord"/></svg>Discord</a></li>
       </ul>
